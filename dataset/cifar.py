@@ -892,53 +892,53 @@ def get_ood(dataset, id, test_only=False, image_size=None):
 
     if dataset == 'cifar10':
         test_dir = os.path.join(DATA_PATH, 'cifar-10')
-        test_set = datasets.CIFAR10('/BS/databases00/cifar-10', train=False, download=False,
+        test_set = datasets.CIFAR10(test_dir, train=False, download=False,
                                     transform=test_transform)
 
     elif dataset == 'cifar100':
         test_dir = os.path.join(DATA_PATH, 'cifar-100')
-        test_set = datasets.CIFAR100('/BS/databases00/cifar-100', train=False, download=False,
+        test_set = datasets.CIFAR100(test_dir, train=False, download=False,
                                      transform=test_transform)
 
     elif dataset == 'svhn':
         test_dir = os.path.join(DATA_PATH, 'svhn')
-        test_set = datasets.SVHN('/BS/yfan/work/datasets/svhn', split='test', download=True,
+        test_set = datasets.SVHN(test_dir, split='test', download=True,
                                  transform=test_transform)
 
     elif dataset == 'lsun':
-        test_dir = os.path.join('/BS/yfan/nobackup', 'LSUN_fix')
+        test_dir = os.path.join(DATA_PATH, 'LSUN_fix')
         test_set = datasets.ImageFolder(test_dir, transform=test_transform)
 
     elif dataset == 'imagenet':
-        test_dir = os.path.join('/BS/yfan/nobackup', 'Imagenet_fix')
+        test_dir = os.path.join(DATA_PATH, 'Imagenet_fix')
         test_set = datasets.ImageFolder(test_dir, transform=test_transform)
 
     elif dataset == 'stanford_dogs':
-        test_dir = os.path.join('/BS/databases/', 'Stanford_Dogs', 'Images')
+        test_dir = os.path.join(DATA_PATH, 'Stanford_Dogs', 'Images')
         test_set = datasets.ImageFolder(test_dir, transform=test_transform)
 
     elif dataset == 'cub':
-        test_dir = os.path.join('/BS/databases/', 'CUB_200_2011', 'images')
+        test_dir = os.path.join(DATA_PATH, 'CUB_200_2011', 'images')
         test_set = datasets.ImageFolder(test_dir, transform=test_transform)
 
     elif dataset == 'flowers102':
-        test_dir = os.path.join('/BS/yfan/nobackup/VTAB/', 'oxford_flowers102')
+        test_dir = os.path.join(DATA_PATH, 'oxford_flowers102')
         test_set = datasets.ImageFolder(test_dir, transform=test_transform)
 
     elif dataset == 'food_101':
-        test_dir = os.path.join('/BS/yfan/nobackup/VTAB/', 'food-101-no-hotdog', 'images')
+        test_dir = os.path.join(DATA_PATH, 'food-101-no-hotdog', 'images')
         test_set = datasets.ImageFolder(test_dir, transform=test_transform)
 
     elif dataset == 'caltech_256':
-        test_dir = os.path.join('/BS/databases/', '256_ObjectCategories')
+        test_dir = os.path.join(DATA_PATH, '256_ObjectCategories')
         test_set = datasets.ImageFolder(test_dir, transform=test_transform)
 
     elif dataset == 'dtd':
-        test_dir = os.path.join('/BS/databases/', 'dtd', 'images')
+        test_dir = os.path.join(DATA_PATH, 'dtd', 'images')
         test_set = datasets.ImageFolder(test_dir, transform=test_transform)
 
     elif dataset == 'pets':
-        test_dir = os.path.join('/BS/yfan/nobackup/', 'pet_for_openmatch')
+        test_dir = os.path.join(DATA_PATH, 'pet_for_openmatch')
         test_set = datasets.ImageFolder(test_dir, transform=test_transform)
 
     return test_set
